@@ -64,25 +64,21 @@ header nav ul li a {
     letter-spacing: 1px;
     text-decoration: none;
 }
-
 .square {
-    /*display: none;*/
+    display: none;
 }
-
 .hidden-list ul li {
     text-transform: capitalize;
 }
-
 header nav ul li .hidden-list {
     display:none;
 }
-
 li:hover .hidden-list {
     display: block;
     position: absolute;
     width: 120px;
     height: 80px;
-    top: 40px;
+    top: 44px;
     left:-20%;
     right:0;
     bottom: 0;
@@ -92,6 +88,23 @@ li:hover .hidden-list {
     color: white;
     padding-top: 10px;
     text-transform: lowercase;
+}
+li:hover .square {
+    display: block;
+    position: absolute;
+    list-style-type: none;
+    color: white;
+    padding-top: 10px;
+    text-transform: lowercase;
+    width:20px;
+    height: 20px;
+    background-color: black;
+    transform: rotate(45deg);
+    top: 40px;
+    left: 40%;
+    right: 0;
+    bottom: 0;
+    margin: auto 0;
 }
 section {
     width: 100%;
@@ -139,6 +152,7 @@ section {
     text-align: center;
     letter-spacing: 1px;
     margin-bottom: 15px;
+    font-size: 30px;
 }
 .gallery-slider-r p {
     text-align: center;
@@ -160,11 +174,11 @@ section {
     text-transform: uppercase;
     margin: 0 auto;
     text-align: center;
-    letter-spacing: 1px;
     border-radius: 5px;
+    height: 35px;
     line-height: 35px;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 18px;
 }
 .gallery-slider-r .button a:link, a:visited{
     color: white;
@@ -189,7 +203,7 @@ section {
     float:left;
     display: block;
     position: relative;
-    background: url("../images/box1_img.jpg") center / cover no-repeat;;
+    background: url("../images/box1_img.jpg") center / cover no-repeat;
     height: 225px;
     width: 310px;
     border: 1px solid lightgrey;
@@ -298,9 +312,6 @@ section {
     margin-bottom: 60px;
     background-color: #f7f7f7;
 }
-.pricebox1:hover {
-    background-color: #23b89f;
-}
 .decor-circle-big {
     position: absolute;
     top: -25;
@@ -366,7 +377,7 @@ section {
 .list ul li:nth-child(odd) {
     background-color: #f0f0f0;
 }
-.list ul li:nth-child(odd):hover {
+.list ul li:nth-child(odd): {
     background-color: white;
 }
 .column  .button {
@@ -388,17 +399,14 @@ section {
 }
 #contact {
     height: 500px;
-
 }
 form {
     margin-top: 50px;
     height: 500px;
-
 }
 .form-l {
     margin-top: 60px;
     width:650px;
-
     float: left;
 }
 .form-r {
@@ -409,6 +417,7 @@ form {
     background: url("../images/red_chair.png") right no-repeat;
     background-position: center top;
     background-size: 264px 210px;
+    position: relative;
 }
 .form-l input[type="text"], input[type="email"]{
     width: 630px;
@@ -420,7 +429,6 @@ form {
 .form-l ::-webkit-input-placeholder {
   color: lightgrey;
   font-size: 26px;
-
 }
 ::-moz-placeholder {
  font-size: 26px;
@@ -437,12 +445,12 @@ form {
 }
 .form-r input[type="submit"] {
     width: 325px;
-    height: 70px;
+    height: 55px;
     background-color: #23b89f;
-    line-height: 70px;
-    font-size: 27px;
+    line-height: 55px;
+    font-size: 26px;
     color: white;
-    margin-top: 314px;
+    margin-top: 328px;
     margin-bottom: 100px;
     margin-right: 0;
     text-transform: uppercase;
@@ -450,65 +458,42 @@ form {
     border-radius: 5px;
     border: none;
     font-weight: bold;
-    font-family: 'ralewayregular'
+    font-family: 'ralewayregular';
+}
+.form-r input[type="submit"]:hover {
+    background-color: #1a9178;
 }
 input[type=checkbox].css-checkbox {
-							position:absolute; z-index:-1000; left:-1000px; overflow: hidden; clip: rect(0 0 0 0); height:1px; width:1px; margin:-1px; padding:0; border:0;
-						}
-						input[type=checkbox].css-checkbox + label.css-label {
-							padding-left:53px;
-							height:40px;
-							display:inline-block;
-							line-height:40px;
-							background-repeat:no-repeat;
-							background-position: 0 0;
-							font-size:40px;
-							vertical-align:middle;
-							cursor:pointer;
-						}
-						input[type=checkbox].css-checkbox:checked + label.css-label {
-							background-position: 0 -40px;
-						}
-						label.css-label {
-				background-image:url(http://csscheckbox.com/checkboxes/u/csscheckbox_48ce7ba215960f0fe9a66706877b577c.png);
-				-webkit-touch-callout: none;
-				-webkit-user-select: none;
-				-khtml-user-select: none;
-				-moz-user-select: none;
-				-ms-user-select: none;
-				user-select: none;
-			}
-
-/*.contact-l {
-    width: 675px;
+    position:absolute; z-index:-1000; left:-1000; overflow: hidden; clip: rect(0 0 0 0); height:1px; width:1px;
 }
-.contact-r {
-    width: 330px;
-    float: right;
-}
-.contact-r img {
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
-.contact-r .agreement {
-    float: left;
-    display: inline-block;
-}
-
-.contact-r .agreement p {
-    text-transform: none;
-    font-size: 15px;
+input[type=checkbox].css-checkbox + label.css-label {
+	padding-left:60px;
+    position: absolute;
+    top:250;
+    left:20;
+    right: 0;
+	height:40px;
+	display:inline-block;
+	line-height:18px;
+	background-repeat:no-repeat;
+	background-position: 0 0;
+	font-size: 16px;
+	vertical-align:middle;
+	cursor:pointer;
     color: lightgrey;
-    display: inline-block;
 }
-.contact-r .button {
-    width: 325px;
-    height: 70px;
-    float: left;
-    line-height: 70px;
-    font-size: 27px;
-    color: white;
-}*/
+input[type=checkbox].css-checkbox:checked + label.css-label {
+	background-position: 0 -40px;
+}
+label.css-label {
+	background-image:url(http://csscheckbox.com/checkboxes/u/csscheckbox_48ce7ba215960f0fe9a66706877b577c.png);
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
 footer {
     background-color: white;
     height: 55px;
@@ -517,29 +502,23 @@ footer {
 }
 .footer-l {
     float: left;
-
 }
 .footer-r {
     float: right;
-
 }
 .footer-r .icon{
     display: inline-block;
 }
 .footer-l p {
     color:lightgrey;
+    font-size: 16px;
 }
 .footer-r .icon p {
     text-transform: uppercase;
     color:#999999;
+    margin-left: 64px;
+    font-size: 16px;
 }
 .bold {
     font-weight: bold;
-}
-.header-inside-list{
-    font-size: 10px;
-    height: 1000px;
-}
-.header-inside-list li {
-    display: block;
 }
