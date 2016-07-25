@@ -55,7 +55,7 @@ header nav ul li a {
     letter-spacing: 1px;
     text-decoration: none;
 }
-.sth {
+.about {
     position:relative;
     margin: 0 10px;
     color: white;
@@ -393,10 +393,6 @@ section {
     color: white;
     text-decoration: none;
 }
-.column .button:hover {
-    background-color: white;
-    color: #23b89f;
-}
 #contact {
     height: 500px;
 }
@@ -464,7 +460,15 @@ form {
     background-color: #1a9178;
 }
 input[type=checkbox].css-checkbox {
-    position:absolute; z-index:-1000; left:-1000; overflow: hidden; clip: rect(0 0 0 0); height:1px; width:1px;
+    position:absolute;
+    z-index:-1000;
+    left:-1000;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height:1px; width:1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
 }
 input[type=checkbox].css-checkbox + label.css-label {
 	padding-left:60px;
