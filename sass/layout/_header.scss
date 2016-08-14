@@ -1,0 +1,175 @@
+@font-face {
+    font-family: 'ralewayregular';
+    src: url('../rest/fonts/raleway-regular-webfont.eot');
+    src: url('../rest/fonts/raleway-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../rest/fonts/raleway-regular-webfont.woff2') format('woff2'),
+         url('../rest/fonts/raleway-regular-webfont.woff') format('woff'),
+         url('../rest/fonts/raleway-regular-webfont.svg#ralewayregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'ralewayregular', Arial, Tahoma, sans-serif;
+}
+
+.container {
+    width: 1000px;
+    margin: 0 auto;
+}
+.clearfix::before, .clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.color {
+    color: $accent-color;
+}
+header {
+    width: 100%;
+    background-color: black;
+    text-transform: uppercase;
+    padding: 15px 0;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    .logo {
+        float: left;
+    }
+    nav {
+        float: right;
+        ul {
+            li {
+                display: inline-block;
+                a {
+                    margin: 0 0 0 30px;
+                    text-decoration: none;
+                    color: white;
+                }
+            }
+            .about {
+                position:relative;
+                cursor: pointer;
+                .square {
+                    display: none;
+
+                    position: absolute;
+                    padding-top: 10px;
+                    width:20px;
+                    height: 20px;
+                    background-color: black;
+                    transform: rotate(45deg);
+                    top: 38px;
+                    left: 20px;
+                    margin: auto 0;
+                }
+                .hidden-list {
+                    display: none;
+                    position:absolute;
+                    ul {
+                        position:absolute;
+                        background-color: black;
+                        width: 120px;
+                        height: 90px;
+                        top: 24px;
+                        left: -10px;
+                        text-align: left;
+                        line-height: 24px;
+                        li {
+                            margin: 2px 14px;
+                            a {
+                                font-weight: lighter;
+                                font-size: 15px;
+                                text-transform: capitalize;
+                                margin: 0;
+
+                            }
+                        }
+                    }
+                }
+                .menuVisible {
+                    display:block;
+                }
+            }
+            // .about:hover {
+            //     // position: relative;
+            //     .square {
+            //         display: block;
+            //         position: absolute;
+            //         padding-top: 10px;
+            //         width:20px;
+            //         height: 20px;
+            //         background-color: black;
+            //         transform: rotate(45deg);
+            //         top: 40px;
+            //         left: 40%;
+            //         margin: auto 0;
+            //     }
+                // .hidden-list {
+                //     ul {
+                //         li {
+                //             display: block;
+                //             position: absolute;
+                //             width: 120px;
+                //             height: 80px;
+                //             top: 44px;
+                //             left: 10;
+                //             background-color: black;
+                //             padding: 10px 0 50px 0;
+                //             a {
+                //                 font-weight: lighter;
+                //                 font-size: 14px;
+                //                 text-transform: capitalize;
+                //             }
+                //         }
+                //     }
+                // }
+            // }
+        }
+    }
+}
+
+// .square {
+//     display: none;
+// }
+// .hidden-list ul li {
+//     text-transform: capitalize;
+// }
+// header nav ul li .hidden-list {
+//     display:none;
+// }
+// li:hover .hidden-list {
+//     display: block;
+//     position: absolute;
+//     width: 120px;
+//     height: 80px;
+//     top: 44px;
+//     left:-20%;
+//     right:0;
+//     bottom: 0;
+//     margin-bottom: 50px;
+//     list-style-type: none;
+//     background-color: black;
+//     color: white;
+//     padding-top: 10px;
+//     text-transform: lowercase;
+// }
+// li:hover .square {
+//     display: block;
+//     position: absolute;
+//     list-style-type: none;
+//     color: white;
+//     padding-top: 10px;
+//     text-transform: lowercase;
+//     width:20px;
+//     height: 20px;
+//     background-color: black;
+//     transform: rotate(45deg);
+//     top: 40px;
+//     left: 40%;
+//     right: 0;
+//     bottom: 0;
+//     margin: auto 0;
+// }

@@ -1,0 +1,28 @@
+footer {
+    width: 100%;
+    height: 55px;
+    padding: 15px 0;
+    line-height: 55px;
+    font-size: 16px;
+    background-color: white;
+    color: $grey-color-2;
+    .footer-l {
+        float: left;
+        p {
+            text-transform: capitalize;
+        }
+    }
+    .footer-r {
+        float: right;
+        .icon {
+            display: inline-block;
+            p {
+                text-transform: uppercase;
+                margin-left: 45px;
+                .bold {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
