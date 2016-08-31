@@ -6,10 +6,6 @@ document.addEventListener("DOMContentLoaded", function(){
     var hiddenList = document.querySelector('.hidden-list');
     var square = document.querySelector('.square');
 
-    console.log(about);
-    console.log(hiddenList);
-    console.log(square);
-
     about.addEventListener('mouseenter', function(){
         hiddenList.classList.add('menuVisible');
         square.classList.add('menuVisible');
@@ -26,14 +22,9 @@ document.addEventListener("DOMContentLoaded", function(){
     var list = document.querySelectorAll(".gallery-slider-l ul li");
     var picIndex = 0;
 
-    console.log(buttonNext);
-    console.log(buttonPrev);
-    console.log(list);
-    console.log(picIndex);
     list[picIndex].className = "visible";
 
     buttonNext.addEventListener("click", function(event) {
-        // console.log("I was clicked");
         list[picIndex].classList.remove("visible");
         picIndex++;
         if (picIndex > list.length - 1) {
@@ -43,7 +34,6 @@ document.addEventListener("DOMContentLoaded", function(){
 
     })
     buttonPrev.addEventListener("click", function(event) {
-        // console.log("I was clicked as well");
         list[picIndex].classList.remove("visible");
         picIndex--;
         if (picIndex < 0) {
@@ -84,168 +74,89 @@ document.addEventListener("DOMContentLoaded", function(){
         }
     })
 
-    //listy formularza
-        var arrow = document.querySelectorAll('.list-arrow');
-        var optionList = document.querySelectorAll('.option-list');
-
-        console.log(arrow);
-        console.log(optionList);
-
-
-        arrow[0].addEventListener("click", function(event) {
-            optionList[0].classList.toggle('visibleTwo');
-        })
-        arrow[1].addEventListener("click", function(event) {
-            optionList[1].classList.toggle('visibleTwo');
-        })
-        arrow[2].addEventListener("click", function(event) {
-            optionList[2].classList.toggle('visibleTwo');
-        })
-
-
         //kalkulator
-        var options = document.querySelectorAll(".option-list");
-        var typeListChildren = options[0].children;
-        var colorListChildren = options[1].children;
-        var materialListChildren = options[2].children;
-        var armchairName = document.querySelector(".table-l .title");
-        var armchairPrice = document.querySelector(".title.value");
-        var colorName = document.querySelector(".table-l .color");
-        var colorPrice = document.querySelector(".color.value");
-        var materialName = document.querySelector(".table-l .pattern");
-        var materialPrice = document.querySelector(".pattern.value");
+        var sort = document.getElementById("sort");
+        var titleTableL = document.querySelector(".titleTableL");
+        var titleTableR = document.querySelector(".titleTableR");
+        var color = document.getElementById("color");
+        var colorTableL = document.querySelector(".colorTableL");
+        var colorTableR = document.querySelector(".colorTableR");
+        var material = document.getElementById("material");
+        var patternTableL = document.querySelector(".patternTableL");
+        var patternTableR = document.querySelector(".patternTableR");
+        var transportTableL = document.querySelector(".transportTableL");
+        var transportTableR = document.querySelector(".transportTableR");
+        var sum = document.querySelector(".sum");
 
-        console.log(typeListChildren);
-        console.log(colorListChildren);
-        console.log(materialListChildren);
-        console.log(armchairName);
-        console.log(armchairPrice);
-        console.log(colorName);
-        console.log(colorPrice);
-        console.log(materialName);
-        console.log(materialPrice);
-
-
-        typeListChildren[0].addEventListener("click", function(event){
-            armchairName.innerText = typeListChildren[0].innerText;
-            armchairPrice.innerText = typeListChildren[0].dataset.price;
-        })
-        typeListChildren[1].addEventListener("click", function(event){
-            armchairName.innerText = typeListChildren[1].innerText;
-            armchairPrice.innerText = typeListChildren[1].dataset.price;
-        })
-        typeListChildren[2].addEventListener("click", function(event){
-            armchairName.innerText = typeListChildren[2].innerText;
-            armchairPrice.innerText = typeListChildren[2].dataset.price;
-        })
-        colorListChildren[0].addEventListener("click", function(event){
-            colorName.innerText = colorListChildren[0].innerText;
-            colorPrice.innerText = colorListChildren[0].dataset.price;
-        })
-        colorListChildren[1].addEventListener("click", function(event){
-            colorName.innerText = colorListChildren[1].innerText;
-            colorPrice.innerText = colorListChildren[1].dataset.price;
-        })
-        colorListChildren[2].addEventListener("click", function(event){
-            colorName.innerText = colorListChildren[2].innerText;
-            coolorPrice.innerText = colorListChildren[2].dataset.price;
-        })
-        materialListChildren[0].addEventListener("click", function(event){
-            materialName.innerText = materialListChildren[0].innerText;
-            materialPrice.innerText = materialListChildren[0].dataset.price;
-            // totalCost += parseFloat(materialPrice.innerText);
-            // sum.innerText = totalCost;
-        })
-        materialListChildren[1].addEventListener("click", function(event){
-            materialName.innerText = materialListChildren[1].innerText;
-            materialPrice.innerText = materialListChildren[1].dataset.price;
-            // totalCost += parseFloat(materialPrice.innerText);
-            // sum.innerText = totalCost;
-        })
-
-
-
-
-
-
-        var transportCheckbox = document.querySelector("input[type=checkbox]");
-        var transport = document.querySelector('.table-l .transport');
-        var transportPrice = document.querySelector('.transport.value');
-
-        console.log(transportCheckbox);
-        console.log(transport);
-        console.log(transportPrice);
-
-        // transportCheckbox.addEventListener('click', function(event){
-        //     if (transportCheckbox.checked === true) {
-        //         transport.innerHTML = "Transport";
-        //         transportPrice.innerHTML = transportCheckbox.dataset.transportPrice;
-        //     } else {
-        //         transport.innerHTML = "";
-        //         transportPrice.innerHTML = "";
-        //     }
-        // })
-
-        var sum = document.querySelector('.sum');
-        console.log(sum);
-        var totalCost = 0;
-
-
-        var checkbox1 = document.querySelector('.checkbox1');
-
-        checkbox1.addEventListener("change", function(event){
-
-            if (transportCheckbox.checked === true) {
-                transport.innerText = "Transport";
-                transportPrice.innerText = transportCheckbox.dataset.transportPrice;
-
-                sum.innerText = totalCost + parseFloat(transportPrice.innerText);
-            } else {
-                transport.innerText = "";
-                transportPrice.innerText = "";
-
-                sum.innerText = totalCost - parseFloat(transportPrice.innerText);
-                if (sum.innerText = "nan") {
-                    sum.innerText = "";
-                }
+        function chairSort() {
+            if (sort.value == "") {
+                titleTableL.innerHTML = "Twój fotel";
+                titleTableR.innerHTML = sort.children[0].dataset.price;
+            } else if (sort.value == "Clair") {
+                titleTableL.innerHTML = "Clair";
+                titleTableR.innerHTML = sort.children[1].dataset.price;
+            } else if (sort.value == "Margarita") {
+                titleTableL.innerHTML = "Margarita";
+                titleTableR.innerHTML = sort.children[2].dataset.price;
+            } else if (sort.value == "Selena") {
+                titleTableL.innerHTML = "Selena";
+                titleTableR.innerHTML = sort.children[3].dataset.price;
             }
-        })
-        // typeListChildren[0].addEventListener("click", function(event){
-        //     armchairName.innerText = typeListChildren[0].innerText;
-        //     armchairPrice.innerText = typeListChildren[0].dataset.price;
+        }
+        sort.addEventListener("change", chairSort);
 
-            // typeListChildren[0].classList.toggle('clicked');
-            // if(typeListChildren[0].classList.contains('clicked')) {
-            //     sum.innerText = totalCost + parseFloat(armchairPrice.innerText);
-            // } else {
-            //     sum.innerText = totalCost - parseFloat(armchairPrice.innerText);
-            // }
-        // })
+         function chairColor() {
+             if (color.value == "") {
+                 colorTableL.innerHTML = "";
+                 colorTableR.innerHTML = color.children[0].dataset.price;
+             } else if (color.value == "Czerwony") {
+                 colorTableL.innerHTML = "Czerwony";
+                 colorTableR.innerHTML = color.children[1].dataset.price;
+             } else if (color.value == "Czarny") {
+                 colorTableL.innerHTML = "Czarny";
+                 colorTableR.innerHTML = color.children[2].dataset.price;
+             } else if (color.value == "Pomarańczowy") {
+                 colorTableL.innerHTML = "Pomarańczowy";
+                 colorTableR.innerHTML = color.children[3].dataset.price;
+             }
+         }
+         color.addEventListener("change", chairColor);
 
-        // typeListChildren[1].addEventListener("click", function(event){
-        //     armchairName.innerText = typeListChildren[1].innerText;
-        //     armchairPrice.innerText = typeListChildren[1].dataset.price;
-            // typeListChildren[1].classList.toggle('clicked');
-            // if(typeListChildren[1].classList.contains('clicked')) {
-            //     sum.innerText = totalCost + parseFloat(armchairPrice.innerText);
-            // } else {
-            //     sum.innerText = totalCost - parseFloat(armchairPrice.innerText);
-            // }
-        // })
-        // var value = document.querySelectorAll('.value');
-        // console.log(value);
-        //
-        // var nana = 0;
-        // for (var j=0; j<value.length; j++) {
-        //     value[j].addEventListener('change', function(){
-        //         nana += value[j].innerText;
-        //         sum.innerText = nana;
-        //         console.log(sum.innerText);
-        //     })
-        // }
+         function chairMaterial() {
+             if (material.value == "") {
+                 patternTableL.innerHTML = "";
+                 patternTableR.innerHTML = material.children[0].dataset.price;
+             } else if (material.value == "Tkanina") {
+                 patternTableL.innerHTML = "Tkanina";
+                 patternTableR.innerHTML = material.children[1].dataset.price;
+             } else if (material.value == "Skóra") {
+                 patternTableL.innerHTML = "Skóra";
+                 patternTableR.innerHTML = material.children[2].dataset.price;
+             }
+         }
+         material.addEventListener("change", chairMaterial);
 
-
-
-
+         function total() {
+            var titleChosen = document.querySelector(".titleTableR");
+            var titleChosen1 = parseFloat(titleChosen.innerHTML);
+            if (isNaN(titleChosen1)) {
+                titleChosen1 = 0;
+            }
+            var colorChosen = document.querySelector(".colorTableR");
+            var colorChosen1 = parseFloat(colorChosen.innerHTML);
+            if (isNaN(colorChosen1)) {
+                colorChosen1 = 0;
+            }
+            var patternChosen = document.querySelector(".patternTableR");
+            var patternChosen1 = parseFloat(patternChosen.innerHTML);
+            if (isNaN(patternChosen1)) {
+                patternChosen1 = 0;
+           }
+           sum.innerHTML = titleChosen1 + colorChosen1 + patternChosen1;
+        }
+        
+        sort.addEventListener("change", total);
+        color.addEventListener("change", total);
+        material.addEventListener("change", total);
 
 });

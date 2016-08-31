@@ -126,32 +126,29 @@
         <div class="container clearfix">
             <div class="calculator-column">
                 <div class="order-form">
-                        <div class="drop-down-list">
-                            <span class="list-input-name">Wybierz rodzaj</span>
-                            <span class="list-arrow"></span>
-                            <ul class="option-list">
-                                <li data-price="300">Clair</li>
-                                <li data-price="1200">Margarita</li>
-                                <li data-price="800">Selena</li>
-                            </ul>
-                        </div>
-                        <div class="drop-down-list">
-                            <span class="list-input-name">Wybierz kolor</span>
-                            <span class="list-arrow"></span>
-                            <ul class="option-list">
-                                <li data-price="150">Czerwony</li>
-                                <li data-price="200">Czarny</li>
-                                <li data-price="100">Pomarańczowy</li>
-                            </ul>
-                        </div>
-                        <div class="drop-down-list">
-                            <span class="list-input-name">Wybierz materiał</span>
-                            <span class="list-arrow"></span>
-                            <ul class="option-list">
-                                <li data-price="300">Tkanina</li>
-                                <li data-price="700">Skóra</li>
-                            </ul>
-                        </div>
+                            <div class="option-list">
+                                <select id="sort" name="sort">
+                                    <option value="" data-price="" selected="">Wybierz rodzaj</option>
+                                    <option value="Clair" data-price="300">Clair</option>
+                                    <option value="Margarita" data-price="1200">Margarita</option>
+                                    <option value="Selena" data-price="800">Selena</option>
+                                </select>
+                            </div>
+                            <div class="option-list">
+                                <select id="color" name="color">
+                                    <option value="" data-price="" selected="">Wybierz kolor</option>
+                                    <option value="Czerwony" data-price="150">Czerwony</option>
+                                    <option value="Czarny" data-price="200">Czarny</option>
+                                    <option value="Pomarańczowy" data-price="100">Pomarańczowy</option>
+                                </select>
+                            </div>
+                            <div class="option-list">
+                                <select id="material" name="material">
+                                    <option value="" data-price="" selected="">Wybierz tkaninę</option>
+                                    <option value="Tkanina" data-price="300">Tkanina</option>
+                                    <option value="Skóra" data-price="700">Skóra</option>
+                                </select>
+                            </div>
                         <div class="checkbox1">
                             <input type="checkbox" id="transport" data-transport-price="200">
                             <label for="transport">Transport</label>
@@ -167,16 +164,16 @@
                     <div class="calculator-summary">
                         <div class="table">
                             <div class="table-l">
-                                <p class="title">Twój fotel</p>
-                                <span class="color"></span>
-                                <span class="pattern"></span>
-                                <span class="transport"></span>
+                                <p class="title titleTableL">Twój fotel</p>
+                                <span class="colorTableL"></span>
+                                <span class="patternTableL"></span>
+                                <span class="transportTableL"></span>
                             </div>
                             <div class="table-r">
-                                <p class="title value"></p>
-                                <span class="color value"></span>
-                                <span class="pattern value"></span>
-                                <span class="transport value"></span>
+                                <p class="title titleTableR value"></p>
+                                <span class="colorTableR value"></span>
+                                <span class="patternTableR value"></span>
+                                <span class="transporTableR value"></span>
                             </div>
                         </div>
                         <div class="sum-table">suma

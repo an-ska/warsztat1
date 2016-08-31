@@ -605,7 +605,7 @@ section {
             	background-position: 0 -40px;
             }
             label.css-label {
-            	background-image:url(http://csscheckbox.com/checkboxes/u/csscheckbox_48ce7ba215960f0fe9a66706877b577c.png);
+            	background-image:url('http://csscheckbox.com/checkboxes/u/csscheckbox_48ce7ba215960f0fe9a66706877b577c.png');
             	-webkit-touch-callout: none;
             	-webkit-user-select: none;
             	-khtml-user-select: none;
@@ -615,4 +615,4 @@ section {
             }
         }
     }
-};
+}
