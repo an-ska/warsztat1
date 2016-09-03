@@ -16,10 +16,17 @@ $input-border-color: #8de0d2; /*form border color*/
     text-align: center;
     letter-spacing: 1px;
     border-radius: 8px;
-    color: white;
+    color: #FFFFFF;
+    cursor: pointer;
+    &:hover {
+        background-color: $buttonHover-color;
+    }
+    a:link, a:visited {
+        color: #FFFFFF;
+        text-decoration: none;
+    }
 }
-
-@mixin sectionHeading {
+@mixin section-heading {
     position: relative;
     text-transform: uppercase;
     color: $grey-color-1;

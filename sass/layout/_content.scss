@@ -10,15 +10,15 @@ section {
     background: -ms-linear-gradient(top, rgba(255,255,255,0.54) 0%, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(206,208,214,1) 94%);
     background: linear-gradient(to bottom, rgba(255,255,255,0.54) 0%, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(206,208,214,1) 94%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ced0d6', GradientType=0 );
-    .special-character-l, .special-character-r{
+    .special-character-l, .special-character-r {
         color: $accent-color;
         margin-top: 160px;
         font-size: 70px;
         font-weight: bold;
-    }
-    .special-character-l:hover, .special-character-r:hover {
-        cursor: pointer;
-        color: $buttonHover-color;
+        &:hover, &:hover {
+            cursor: pointer;
+            color: $buttonHover-color;
+        }
     }
     .special-character-l {
         float: left;
@@ -34,7 +34,7 @@ section {
                 display: none;
             }
         }
-        .visible{
+        .visible {
             display: inline-block;
         }
     }
@@ -63,13 +63,6 @@ section {
             height: 40px;
             line-height: 40px;
             font-size: 18px;
-             a:link, a:visited {
-                color: white;
-                text-decoration: none;
-            }
-        }
-        .button:hover {
-            background-color: $buttonHover-color;
         }
     }
     .special-character-r {
@@ -79,12 +72,11 @@ section {
     }
 }
 #gallery-row {
-    background-color: white;
+    background-color: #FFFFFF;
     .box-description {
         position: relative;
-        margin-top: 40px;
-        margin-bottom: 70px;
-        float:left;
+        margin: 40px auto 70px auto;
+        float: left;
         display: block;
         border: 1px solid $grey-color-5;
         .under-line {
@@ -113,14 +105,13 @@ section {
             letter-spacing: 1px;
         }
     }
-
     .box1 {
         background: url("../rest/images/box1_img.jpg") center / cover no-repeat;
     }
     .box2 {
         background: url("../rest/images/box2_img.jpg") center / cover no-repeat;
     }
-    .box3{
+    .box3 {
         position: relative;
         width: 320px;
         p {
@@ -130,9 +121,9 @@ section {
             color: $grey-color-2;
         }
         p:first-child {
-            padding: 15px 15px;
+            padding: 15px;
             font-weight: bold;
-            color: black;
+            color: #000000;
         }
         p:nth-child(3), p:nth-child(4) {
             padding: 0 15px 15px 15px;
@@ -143,14 +134,14 @@ section {
             top: 36px;
         }
     }
-    .picTextVisible {
-        display:none;
+    .pic-text-visible {
+        display: none;
     }
 }
 #pricing {
     background-color: $grey-color-3;
     .section-heading {
-        @include sectionHeading;
+        @include section-heading;
         .under-line {
             @include underline;
             bottom: -10px;
@@ -159,15 +150,13 @@ section {
         }
     }
     .column {
-        float:left;
+        float: left;
         position: relative;
         height: 500px;
         width: 310px;
         border: 1px solid $grey-color-5;
-        margin-top: 80px;
-        margin-bottom: 60px;
+        margin: 80px 33px 60px auto;
         background-color: $grey-color-4;
-        margin-right: 33px;
         .decor-circle-big {
             position: absolute;
             top: -32px;
@@ -201,7 +190,7 @@ section {
             width: 120px;
             height: 120px;
             border-radius: 50%;
-            background-color: white;
+            background-color: #FFFFFF;
             border: 1px solid $grey-color-5;
             p {
                 text-align: center;
@@ -226,31 +215,26 @@ section {
                     text-align: center;
                     line-height: 45px;
                     font-size: 18px;
-                }
-                li:nth-child(even) {
-                    background-color: $grey-color-3;
-                    color: $grey-color-2;
-                }
-                li:nth-child(odd) {
-                    background-color: $grey-color-6;
-                    color: $grey-color-5;
+                    &:nth-child(even) {
+                        background-color: $grey-color-3;
+                        color: $grey-color-2;
+                    }
+                    &:nth-child(odd) {
+                        background-color: $grey-color-6;
+                        color: $grey-color-5;
+                    }
                 }
             }
         }
         .button {
             @include button;
-            position:absolute;
+            position: absolute;
             bottom: 30px;
             right: 105px;
             width: 100px;
-            color: white;
+            color: #FFFFFF;
             line-height: 30px;
             font-size: 14px;
-
-        }
-        a:link, a:visited {
-            color: white;
-            text-decoration: none;
         }
     }
     .column:nth-child(6){
@@ -264,7 +248,7 @@ section {
             border: 1px solid $accent-color;
         }
         .decor-circle-small {
-            background-color: white;
+            background-color: #FFFFFF;
         }
         .decor-circle-price {
             .price-top, .price-bottom {
@@ -274,12 +258,12 @@ section {
         .list {
             ul {
                 li:nth-child(odd) {
-                    background-color: white;
+                    background-color: #FFFFFF;
                 }
             }
         }
         .button {
-            background-color: white;
+            background-color: #FFFFFF;
             a {
                 color: $accent-color;
             }
@@ -289,7 +273,7 @@ section {
 #calculator {
     background-color: $grey-color-4;
     .section-heading {
-        @include sectionHeading;
+        @include section-heading;
         .under-line {
             @include underline;
         }
@@ -313,69 +297,31 @@ section {
     }
     .calculator-column {
         .order-form {
-            margin-top: 30px;
-            margin-bottom: 40px;
+            margin: 30px auto 40px auto;
             float:left;
             position: relative;
             width: 312px;
-            .drop-down-list {
-                position: relative;
-                border:1px solid $input-border-color;
-                width: 310px;
-                height:50px;
-                background-color: white;
-                margin-top: 30px;
-                padding: 0 12px;
-                .list-input-name {
-                    font-size: 26px;
-                    line-height: 50px;
-                    color: #e2e2e2;
-                    font-family: 'ralewayregular', Arial, Tahoma, sans-serif;
-                }
-                .list-arrow {
-                    width: 0;
-                    height: 0;
-                    border-left: 15px solid transparent;
-                    border-right: 15px solid transparent;
-                    border-top: 15px solid #24baa0;
-                    display:block;
-                    position: absolute;
-                    right: 14px;
-                    top: 12px;
-                    cursor: pointer;
-                }
-                .option-list {
-                    background-color: white;
-                    border: 1px solid #ccc;
-                    padding: 12px;
-                    list-style: none;
-                    margin: 0;
-                    left: -1px;
-                    z-index: 2;
-                    position: absolute;
-                    top: 49px;
-                    display:none;
+            .option-list {
+                margin: 26px 0;
+                select {
+                    color: #575757;
+                    font-size: 20px;
+                    margin: 2px;
                     width: 310px;
-                    li {
-                        line-height: 30px;
-                        cursor: pointer;
-                        color: #585858;
-                    }
-                }
-                .visibleTwo {
-                    display: block;
+                    padding: 8px;
+                    border: 1px solid #8de0d2;
                 }
             }
             .checkbox1 {
                 position: relative;
-                padding: 30px 30px 30px 0;
+                padding: 26px 30px 30px 0;
                 input {
                     display: block;
                     opacity: 0;
                     height: 48px;
                     position: absolute;
                     width: 48px;
-                    cursor: pointer
+                    cursor: pointer;
                 }
                 label {
                     display: block;
@@ -411,25 +357,24 @@ section {
             float: left;
             width: 312px;
             img {
-                margin-top: 50px;
-                margin-left: 56px;
-                margin-right: 56px;
+                margin: 50px 56px auto 56px;
             }
         }
         .calculator-summary {
-            float:right;
+            float: right;
             width: 312px;
             .table {
                 width: 312px;
-                background-color: white;
-                height:160px;
+                background-color: #FFFFFF;
+                height: 160px;
                 margin-top: 60px;
-                border-bottom:1px solid #e7e7e7;
+                border-bottom: 1px solid #e7e7e7;
                 .title {
                     height: 30px;
                     color: $accent-color;
                     font-size: 22px;
                     padding: 10px 10px 34px 10px;
+                }
                 .table-l {
                     float: left;
                     width: 200px;
@@ -445,16 +390,16 @@ section {
                     }
                 }
                 .table-r {
-                    float:right;
+                    float: right;
                     width: 112px;
                     height: 160px;
-                     text-align: right;
-                     vertical-align: top;
+                    text-align: right;
+                    vertical-align: top;
                      span {
                          display: block;
                          font-size: 20px;
                          color: #24baa0;
-                         margin:10px;
+                         margin: 10px;
                          line-height: 20px;
                      }
                  }
@@ -466,12 +411,12 @@ section {
                 font-size: 22px;
                 line-height: 53px;
                 color: $grey-color-1;
-                background-color: white;
+                background-color: #FFFFFF;
                 padding-left: 10px;
                 text-transform: uppercase;
                 .sum {
                     width: 112px;
-                    float:right;
+                    float: right;
                     text-align: right;
                     font-size: 40px;
                     color: #24baa0;
@@ -482,28 +427,19 @@ section {
                 height: 54px;
                 width: 250px;
                 margin-top: 26px;
+                margin-bottom: 60px;
                 a {
-                    text-decoration: none;
-                    color: white;
                     font-size: 24px;
                     line-height: 54px;
                 }
-                a:link, a:visited {
-                   color: white;
-                   text-decoration: none;
-               }
-           }
-           .button:hover {
-               background-color: $buttonHover-color;
            }
        }
    }
 }
-
 #contact {
     height: 500px;
     .section-heading {
-        @include sectionHeading;
+        @include section-heading;
         .under-line {
             @include underline;
             bottom: -10px;
@@ -514,7 +450,7 @@ section {
     form {
         .form-l {
             margin-top: 60px;
-            width:650px;
+            width: 650px;
             float: left;
             input[type="text"], input[type="email"] {
                 width: 610px;
@@ -569,22 +505,19 @@ section {
                 font-weight: bold;
                 font-family: 'ralewayregular';
             }
-            input[type="submit"]:hover {
-                background-color: $buttonHover-color;
-            }
             input[type=checkbox].css-checkbox {
                 position:absolute;
-                z-index:-1000;
+                z-index: -1000;
                 left:-1000;
                 overflow: hidden;
                 clip: rect(0 0 0 0);
-                height:1px;
-                width:1px;
+                height: 1px;
+                width: 1px;
                 margin: -1px;
                 padding: 0;
                 border: 0;
                 + label.css-label {
-                	padding-left:60px;
+                	padding-left: 60px;
                     position: absolute;
                     top: 250px;
                     left: 20px;
@@ -596,7 +529,7 @@ section {
                 	background-position: 0 0;
                 	font-size: 16px;
                 	vertical-align: middle;
-                	cursor:pointer;
+                	cursor: pointer;
                     color: $grey-color-2;
                     line-height: 23px;
                 }
