@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function(){
     })
 
 
-//kculculator
+//calculator
     var type = document.getElementById('type-list');
     var typeTable = document.querySelector('.type');
     var typeTablePrice = document.querySelector('.type-price');
