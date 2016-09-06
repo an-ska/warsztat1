@@ -19,27 +19,42 @@ document.addEventListener('DOMContentLoaded', function(){
 //slider
     var buttonNext = document.querySelector('.special-character-r');
     var buttonPrev = document.querySelector('.special-character-l');
-    var list = document.querySelectorAll('.gallery-slider-l ul li');
+    var imgList = document.querySelectorAll('.gallery-slider-l ul li');
+    var pList = document.querySelectorAll('.gallery-slider-r p');
     var picIndex = 0;
-
-    list[picIndex].className = 'visible';
+    var pIndex = 0;
+    imgList[picIndex].className = 'slider-pic-visible';
+    pList[pIndex].className = 'slider-p-visible';
 
     buttonNext.addEventListener('click', function() {
-        list[picIndex].classList.remove('visible');
+        imgList[picIndex].classList.remove('slider-pic-visible');
         picIndex++;
-        if (picIndex > list.length - 1) {
-            picIndex = list.length - 1;
+        if (picIndex > imgList.length - 1) {
+            picIndex = imgList.length - 1;
         }
-        list[picIndex].className = 'visible';
+        imgList[picIndex].className = 'slider-pic-visible';
 
+        pList[pIndex].classList.remove('slider-p-visible');
+        pIndex++;
+        if (pIndex > pList.length - 1) {
+            pIndex = pList.length - 1;
+        }
+        pList[pIndex].className = 'slider-p-visible';
     })
     buttonPrev.addEventListener('click', function() {
-        list[picIndex].classList.remove('visible');
+        imgList[picIndex].classList.remove('slider-pic-visible');
         picIndex--;
         if (picIndex < 0) {
             picIndex = 0;
         }
-        list[picIndex].className = 'visible';
+        imgList[picIndex].className = 'slider-pic-visible';
+
+        pList[pIndex].classList.remove('slider-p-visible');
+        pIndex--;
+        if (pIndex < 0) {
+            pIndex = 0;
+        }
+        pList[pIndex].className = 'slider-p-visible';
     })
 
 
@@ -51,23 +66,23 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
     boxOne.addEventListener('mouseenter', function() {
-        for (var i=0; i < boxOneChildren.length; i++) {
-            boxOneChildren[i].classList.add('pic-text-visible');
+        for (var i = 0; i < boxOneChildren.length; i++) {
+            boxOneChildren[i].classList.add('pic-text-hidden');
         }
     })
     boxOne.addEventListener('mouseleave', function() {
-        for (var i=0; i < boxOneChildren.length; i++) {
-            boxOneChildren[i].classList.remove('pic-text-visible');
+        for (var i = 0; i < boxOneChildren.length; i++) {
+            boxOneChildren[i].classList.remove('pic-text-hidden');
         }
     })
     boxTwo.addEventListener('mouseenter', function() {
-        for (var i=0; i < boxTwoChildren.length; i++) {
-            boxTwoChildren[i].classList.add('pic-text-visible');
+        for (var i = 0; i < boxTwoChildren.length; i++) {
+            boxTwoChildren[i].classList.add('pic-text-hidden');
         }
     })
     boxTwo.addEventListener('mouseleave', function() {
-        for (var i=0; i < boxTwoChildren.length; i++) {
-            boxTwoChildren[i].classList.remove('pic-text-visible');
+        for (var i = 0; i < boxTwoChildren.length; i++) {
+            boxTwoChildren[i].classList.remove('pic-text-hidden');
         }
     })
 
@@ -86,6 +101,7 @@ document.addEventListener('DOMContentLoaded', function(){
     var transportTable = document.querySelector('.transport');
     var transportTablePrice = document.querySelector('.transport-price');
     var sum = document.querySelector('.sum');
+    var imageColorList = document.querySelectorAll('.calculator-image img');
 
     function chairType() {
         if (type.value == '') {
@@ -105,18 +121,25 @@ document.addEventListener('DOMContentLoaded', function(){
         type.addEventListener('change', chairType);
 
         function chairColor() {
+            for (var k = 0; k < imageColorList.length; k++) {
+                imageColorList[k].classList.add('calculator-image-hidden');
+            }
+
             if (color.value == '') {
                 colorTable.innerHTML = '';
                 colorTablePrice.innerHTML = color.children[0].dataset.price;
             } else if (color.value == 'Czerwony') {
                 colorTable.innerHTML = 'Czerwony';
                 colorTablePrice.innerHTML = color.children[1].dataset.price;
+                imageColorList[0].classList.remove('calculator-image-hidden');
             } else if (color.value == 'Czarny') {
                 colorTable.innerHTML = 'Czarny';
                 colorTablePrice.innerHTML = color.children[2].dataset.price;
+                imageColorList[1].classList.remove('calculator-image-hidden');
             } else if (color.value == 'Pomarańczowy') {
                 colorTable.innerHTML = 'Pomarańczowy';
                 colorTablePrice.innerHTML = color.children[3].dataset.price;
+                imageColorList[2].classList.remove('calculator-image-hidden');
             }
         }
         color.addEventListener('change', chairColor);
@@ -166,7 +189,7 @@ document.addEventListener('DOMContentLoaded', function(){
             if (isNaN(transportChosen1)) {
                 transportChosen1 = 0;
             }
-            sum.innerHTML = typeChosen1 + colorChosen1 + materialChosen1 + transportChosen1;
+            sum.innerHTML = typeChosen1 + colorChosen1 + materialChosen1 + transportChosen1 + ' zł';
         }
 
         type.addEventListener('change', total);

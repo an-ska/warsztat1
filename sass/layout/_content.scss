@@ -34,7 +34,7 @@ section {
                 display: none;
             }
         }
-        .visible {
+        .slider-pic-visible {
             display: inline-block;
         }
     }
@@ -50,6 +50,10 @@ section {
             font-size: 30px;
         }
         p {
+            display: none;
+        }
+        .slider-p-visible {
+            display: block;
             text-align: center;
             font-size: 12px;
             margin-bottom: 25px;
@@ -134,7 +138,7 @@ section {
             top: 36px;
         }
     }
-    .pic-text-visible {
+    .pic-text-hidden{
         display: none;
     }
 }
@@ -250,6 +254,9 @@ section {
         .decor-circle-small {
             background-color: #FFFFFF;
         }
+        .pricing-heading p {
+            color: #FFFFFF;
+        }
         .decor-circle-price {
             .price-top, .price-bottom {
                 color: $accent-color;
@@ -283,7 +290,7 @@ section {
         .under-line.calculator-heading-l{
             width: 280px;
             top: 24px;
-            left:0;
+            left: 0;
             margin-left: 0;
         }
         .calculator-heading-r {
@@ -356,9 +363,14 @@ section {
         .calculator-image {
             float: left;
             width: 312px;
+            display: block;
             img {
-                margin: 50px 56px auto 56px;
+                width: 100%;
+                margin: 50px auto auto auto;
             }
+        }
+        .calculator-image-hidden {
+            display: none;
         }
         .calculator-summary {
             float: right;
@@ -415,10 +427,11 @@ section {
                 padding-left: 10px;
                 text-transform: uppercase;
                 .sum {
+                    font-size: 24px;
+                    text-transform: lowercase;
                     width: 112px;
                     float: right;
                     text-align: right;
-                    font-size: 40px;
                     color: #24baa0;
                 }
             }
