@@ -1,10 +1,7 @@
 @font-face {
-    font-family: 'ralewayregular';
-    src: url('../rest/fonts/raleway-regular-webfont.eot');
-    src: url('../rest/fonts/raleway-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../rest/fonts/raleway-regular-webfont.woff2') format('woff2'),
-         url('../rest/fonts/raleway-regular-webfont.woff') format('woff'),
-         url('../rest/fonts/raleway-regular-webfont.svg#ralewayregular') format('svg');
+    font-family: 'Raleway';
+    src: url('../rest/fonts/Raleway-Regular.eot');
+    src: local('Raleway'), local('Raleway-Regular'), url('../rest/fonts/Raleway-Regular.eot?#iefix') format('embedded-opentype'), url('../rest/fonts/Raleway-Regular.woff2') format('woff2'), url('../rest/fonts/Raleway-Regular.woff') format('woff'), url('../rest/fonts/Raleway-Regular.ttf') format('truetype'), url('../rest/fonts/Raleway-Regular.svg#Raleway-Regular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -12,7 +9,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'ralewayregular', Tahoma, sans-serif;
+    font-family: 'Raleway', sans-serif;
 }
 .container {
     width: 1000px;
@@ -33,7 +30,6 @@ header {
     padding: 15px 0;
     color: #FFFFFF;
     font-size: 16px;
-    font-weight: bold;
     cursor: default;
     .logo {
         float: left;
@@ -79,7 +75,6 @@ header {
                         li {
                             margin: 2px 14px;
                             a {
-                                font-weight: lighter;
                                 font-size: 15px;
                                 text-transform: capitalize;
                                 margin: 0;
